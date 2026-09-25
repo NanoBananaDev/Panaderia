@@ -1,0 +1,40 @@
+<%- include('partials/header', { pageTitle: 'Pan recién horneado' }) %>
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Hecho con tiempo, servido con cariño</span>
+        <h1>El sabor recién horneado que <em>alegra tu día</em></h1>
+        <p>Disfruta panes, pasteles y delicias preparadas cada día con ingredientes seleccionados.</p>
+        <a class="btn btn-gold btn-lg rounded-pill px-4" href="#productos">Ver productos <span aria-hidden="true">→</span></a>
+        <div class="hero-note"><span>✦</span> Horneamos cada mañana en La Paz</div>
+      </div>
+      <div class="hero-photo-wrap"><div class="hero-photo"></div><div class="photo-stamp">Fresco<br>cada día</div></div>
+    </div>
+    <div class="hero-bottom container"><span>TRADICIÓN &nbsp;·&nbsp; CALIDAD &nbsp;·&nbsp; SABOR</span><a href="#productos">Descubre nuestras delicias ↓</a></div>
+  </section>
+
+  <section class="products-section section-space" id="productos">
+    <div class="container">
+      <div class="section-heading d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3">
+        <div><span class="eyebrow">DE NUESTRO HORNO A TU MESA</span><h2>Nuestros productos</h2><p>Pequeños placeres, preparados frescos cada día.</p></div>
+        <span class="product-count"><%= productos.length %> delicias para elegir</span>
+      </div>
+      <% if (productos.length) { %>
+      <div class="row g-4 mt-2">
+        <% productos.forEach((producto, index) => { %>
+        <div class="col-sm-6 col-lg-3">
+          <article class="product-card h-100">
+            <div class="product-image-wrap"><img src="<%= producto.imagen %>" alt="<%= producto.nombre %>" class="product-image" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85'"><span class="product-number">0<%= index + 1 %></span></div>
+            <div class="product-info"><span class="category-tag"><%= producto.categoria %></span><div class="d-flex justify-content-between align-items-start gap-2"><h3><%= producto.nombre %></h3><strong class="price"><%= formatPrice(producto.precio) %></strong></div><p><%= producto.descripcion %></p><span class="stock-line"><span class="stock-dot <%= Number(producto.stock) > 0 ? '' : 'out' %>"></span><%= Number(producto.stock) > 0 ? `Disponible · ${producto.stock} unidades` : 'Agotado por hoy' %></span></div>
+          </article>
+        </div>
+        <% }) %>
+      </div>
+      <% } else { %><div class="empty-state">Pronto tendremos nuevas delicias recién horneadas.</div><% } %>
+    </div>
+  </section>
+
+  <section class="about-section" id="nosotros"><div class="container"><div class="about-card"><div class="about-icon">✳</div><div><span class="eyebrow">UN POCO DE NOSOTROS</span><h2>El oficio de hacer las cosas con cariño.</h2><p>En Panadería Delicia horneamos cada día productos frescos combinando tradición, calidad y sabor. Creemos que los mejores momentos empiezan alrededor de algo rico.</p></div><a href="/admin" class="about-link" aria-label="Administrar productos">↗</a></div></div></section>
+</main>
+<%- include('partials/footer') %>

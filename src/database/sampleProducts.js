@@ -1,0 +1,10 @@
+module.exports = [
+  { id: 1, nombre: 'Pan Francés', descripcion: 'Crujiente por fuera y suave por dentro, horneado cada mañana.', precio: 1.5, categoria: 'Panes', imagen: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85', stock: 40 },
+  { id: 2, nombre: 'Croissant', descripcion: 'Hojaldre dorado y mantequilloso para acompañar tu café.', precio: 6, categoria: 'Pastelería', imagen: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85', stock: 18 },
+  { id: 3, nombre: 'Pan Integral', descripcion: 'Pan nutritivo de granos seleccionados y sabor casero.', precio: 8, categoria: 'Panes', imagen: 'https://images.unsplash.com/photo-1534620808146-d33bb39128b2?auto=format&fit=crop&w=900&q=85', stock: 14 },
+  { id: 4, nombre: 'Empanada de Queso', descripcion: 'Masa ligera rellena de queso, recién salida del horno.', precio: 5.5, categoria: 'Salados', imagen: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85', stock: 22 },
+  { id: 5, nombre: 'Torta de Chocolate', descripcion: 'Bizcocho húmedo de cacao con una cobertura sedosa.', precio: 18, categoria: 'Pastelería', imagen: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85', stock: 6 },
+  { id: 6, nombre: 'Cuñapé', descripcion: 'Tradicional bocado boliviano de almidón de yuca y queso.', precio: 3, categoria: 'Especialidades', imagen: 'https://images.unsplash.com/photo-1608198093002-ad4e005484df?auto=format&fit=crop&w=900&q=85', stock: 25 },
+  { id: 7, nombre: 'Galletas Artesanales', descripcion: 'Galletas de mantequilla hechas en pequeños lotes.', precio: 4.5, categoria: 'Galletas', imagen: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=85', stock: 30 },
+  { id: 8, nombre: 'Pan de Chocolate', descripcion: 'Masa tierna con trozos de chocolate en cada mordida.', precio: 7, categoria: 'Especialidades', imagen: 'https://images.unsplash.com/photo-1608198093002-ad4e005484df?auto=format&fit=crop&w=900&q=85', stock: 12 }
+];

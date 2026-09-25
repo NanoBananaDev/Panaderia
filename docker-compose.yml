@@ -1,0 +1,40 @@
+services:
+  web:
+    build: .
+    container_name: panaderia_web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${POSTGRES_DB:-panaderia}
+      DB_USER: ${POSTGRES_USER:-panaderia_user}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-panaderia_dev}
+      DB_CONNECT_ATTEMPTS: 15
+      DB_CONNECT_DELAY_MS: 2000
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    container_name: panaderia_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-panaderia}
+      POSTGRES_USER: ${POSTGRES_USER:-panaderia_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-panaderia_dev}
+    volumes:
+      - panaderia_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+volumes:
+  panaderia_data:

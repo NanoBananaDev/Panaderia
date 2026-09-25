@@ -1,0 +1,18 @@
+{
+  "name": "panaderia-delicia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicación web educativa para administrar productos de una panadería con Express, EJS y PostgreSQL en Docker.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1"
+  }
+}
