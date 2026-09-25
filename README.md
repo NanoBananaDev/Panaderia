@@ -2,6 +2,11 @@
 
 Aplicación web educativa para mostrar y administrar productos de una panadería. Está construida con Node.js, Express, EJS, Bootstrap y PostgreSQL. Los dos servicios se ejecutan en Docker Compose y PostgreSQL guarda sus datos en un volumen nombrado.
 
+## Entregables
+
+- [Documentación de la práctica Docker (PDF)](output/pdf/Documentacion_Practica_Docker_Panaderia.pdf), con evidencias de comandos, capturas del sitio publicado y datos del estudiante.
+- [Catálogo público en Vercel](https://panaderia-delicia-six.vercel.app/).
+
 ## Objetivo
 
 Demostrar una aplicación web funcional conectada a una base de datos relacional dentro de Docker, con operaciones para crear, consultar, editar y eliminar productos. La interfaz ofrece un catálogo público y un panel administrativo sencillo.
